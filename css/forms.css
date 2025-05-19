@@ -1,47 +1,74 @@
 .form-container {
   max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: white;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background-color: var(--color-fondo-secundario);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--color-texto-principal);
 }
 
-input {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+  border: 1px solid var(--color-borde);
+  border-radius: 5px;
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-principal);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 2px var(--color-acento-oscuro_transparente, rgba(52, 152, 219, 0.25));
 }
 
 .submit {
-  background-color: #081b2a;
-  color: white;
+  background-color: var(--color-primario);
+  color: var(--color-texto-principal);
   border: none;
-  padding: 10px 15px;
-  border-radius: 3px;
+  padding: 12px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .submit:hover {
-  background-color: #005f95;
+  background-color: var(--color-primario-hover);
 }
 
 .register-link, .login-link {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
 }
 
 .register-link a, .login-link a {
-  color: #081b2a;
+  color: var(--color-acento);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.register-link a:hover, .login-link a:hover {
+  text-decoration: underline;
 } 
