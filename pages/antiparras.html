@@ -12,16 +12,7 @@
 <body>
   <header>
     <nav>
-      <a href="../index.html">
-        <img class="logo" src="../assets/AquaSwim.png" width="200px" alt="logo">
-      </a>
-      <ul>
-        <li><a href="trajes.html">Trajes de Baño</a></li>
-        <li><a href="antiparras.html">Antiparras</a></li>
-        <li><a href="gorras.html">Gorras</a></li>
-        <li><a href="login.html">Iniciar Sesión</a></li>
-        <li><button class="endSession" title="Cerrar Sesión"><img src="../assets/EndSession.svg" alt="Cerrar Sesión" width="20px"></button></li>
-      </ul>
+      <!-- Barra de navegación dinámica -->
     </nav>
   </header>
   <main>
@@ -30,27 +21,15 @@
       <p>Explora nuestra colección de antiparras para natación, diseñadas para ofrecer claridad, comodidad y protección.</p>
       
       <div class="cards-container">
-        <article class="product-card">
-          <img src="https://acdn-us.mitiendanube.com/stores/001/742/412/products/001430-545-01-c64e3271590d0f864b17431093325411-1024-1024.webp" alt="Antiparra Profesional Modelo X">
-          <div class="product-card-content">
-            <h3>Antiparra Profesional X</h3>
-            <p class="description">Visión clara y sin fugas para el nadador competitivo. Lentes anti-empañantes y con protección UV.</p>
-            <p class="price">$25.990,00</p>
-          </div>
-          <a href="#" class="btn-card">Ver Detalles</a>
-        </article>
-
-        <article class="product-card">
-          <img src="https://acdn-us.mitiendanube.com/stores/001/742/412/products/002756-107-01-7e88f31aacde469bb517404440723447-1024-1024.webp" alt="Antiparra Junior Modelo Y">
-          <div class="product-card-content">
-            <h3>Antiparra Junior Y</h3>
-            <p class="description">Ajuste cómodo y divertido para los pequeños nadadores. Colores brillantes y material resistente.</p>
-            <p class="price">$15.500,00</p>
-          </div>
-          <a href="#" class="btn-card">Ver Detalles</a>
-        </article>
+        <!-- Tarjetas de productos dinámicas -->
       </div>
     </section>
   </main>
+  <script src="../js/site-structure.js"></script>
+  <script src="../js/navbar-component.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="../js/product-data.js"></script>
+  <script src="../js/dynamic-product-loader.js"></script>
+  <script src="../js/product-card-interaction.js"></script>
 </body>
 </html> 

@@ -12,16 +12,7 @@
 <body>
   <header>
     <nav>
-      <a href="../index.html">
-        <img class="logo" src="../assets/AquaSwim.png" width="200px" alt="logo">
-      </a>
-      <ul>
-        <li><a href="trajes.html">Trajes de Baño</a></li>
-        <li><a href="antiparras.html">Antiparras</a></li>
-        <li><a href="gorras.html">Gorras</a></li>
-        <li><a href="login.html">Iniciar Sesión</a></li>
-        <li><button class="endSession" title="Cerrar Sesión"><img src="../assets/EndSession.svg" alt="Cerrar Sesión" width="20px"></button></li>
-      </ul>
+      <!-- Barra de navegación dinámica -->
     </nav>
   </header>
   <main>
@@ -30,27 +21,15 @@
       <p>Explora nuestra colección de gorras de natación, diseñadas para reducir la resistencia al agua y mantener tu cabello protegido.</p>
       
       <div class="cards-container">
-        <article class="product-card">
-          <img src="https://acdn-us.mitiendanube.com/stores/001/742/412/products/1e774-239-poolish-moulded-001-fl-s-9f2da664-8d89b453628bd91e2f17416409415223-1024-1024.webp" alt="Gorra de Silicona Pro">
-          <div class="product-card-content">
-            <h3>Gorra de Silicona Pro</h3>
-            <p class="description">Ajuste hidrodinámico y cómodo, ideal para entrenamiento y competición. Reduce la resistencia.</p>
-            <p class="price">$12.990,00</p>
-          </div>
-          <a href="#" class="btn-card">Ver Detalles</a>
-        </article>
-
-        <article class="product-card">
-          <img src="https://acdn-us.mitiendanube.com/stores/001/742/412/products/002467500-011-cf624d4f121af08ff316594680746554-1024-1024.webp" alt="Gorra de Lycra Confort">
-          <div class="product-card-content">
-            <h3>Gorra de Lycra Confort</h3>
-            <p class="description">Material suave y elástico para un ajuste confortable durante largas sesiones de natación.</p>
-            <p class="price">$9.500,00</p>
-          </div>
-          <a href="#" class="btn-card">Ver Detalles</a>
-        </article>
+        <!-- Tarjetas de productos dinámicas -->
       </div>
     </section>
   </main>
+  <script src="../js/site-structure.js"></script>
+  <script src="../js/navbar-component.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="../js/product-data.js"></script>
+  <script src="../js/dynamic-product-loader.js"></script>
+  <script src="../js/product-card-interaction.js"></script>
 </body>
 </html> 

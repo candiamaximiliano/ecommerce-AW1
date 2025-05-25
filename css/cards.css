@@ -32,6 +32,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-card-content h3 {
@@ -58,8 +59,8 @@
 
 .btn-card {
   display: block;
-  margin: 0 15px 15px 15px;
-  padding: 10px 15px;
+  margin: 0;
+  padding: 10px 0px;
   background-color: var(--color-primario);
   color: var(--color-texto-principal);
   border: none;
@@ -68,8 +69,59 @@
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .btn-card:hover {
   background-color: var(--color-primario-hover);
+}
+
+.product-quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-borde);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.product-quantity-controls button,
+.product-quantity-controls input {
+  border: none;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
+  padding: 8px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.product-quantity-controls button {
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease;
+}
+
+.product-quantity-controls button:hover {
+  background-color: var(--color-fondo-hover);
+}
+
+.product-quantity-controls .quantity-input {
+  width: 40px;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border-left: 1px solid var(--color-borde);
+  border-right: 1px solid var(--color-borde);
+}
+
+.product-quantity-controls .quantity-input::-webkit-outer-spin-button,
+.product-quantity-controls .quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-card.btn-add-to-cart {
+  margin: 0;
+  width: 100%;
 }
