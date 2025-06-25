@@ -65,17 +65,6 @@
   fill: currentColor;
 }
 
-.footer-divider {
-  margin: 25px 0;
-  height: 1px;
-  background: linear-gradient(
-    to right, 
-    transparent,
-    var(--color-borde),
-    transparent
-  );
-}
-
 .footer-bottom {
   text-align: center;
   padding-top: 20px;

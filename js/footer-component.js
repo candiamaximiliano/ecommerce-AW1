@@ -51,8 +51,6 @@ function createFooter() {
       </div>
     </div>
     
-    <div class="footer-divider"></div>
-    
     <div class="footer-bottom">
       <p>&copy; 2025 <a href="#" class="footer-logo">AquaSwim</a> - Proyecto académico desarrollado para fines educativos</p>
     </div>
