@@ -32,9 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let navHTML = `
         <a href="${basePath}index.html">
-            <img class="logo" src="${basePath}assets/AquaSwim.png" width="200px" alt="Logo AquaSwim">
+            <img class="logo" src="${basePath}assets/AquaSwim.png" alt="Logo AquaSwim">
         </a>
-        <ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
     `;
 
     sitePages.forEach(page => {
@@ -73,6 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
     navHTML += `</ul>`;
 
     navElement.innerHTML = navHTML;
+
+    const hamburger = navElement.querySelector('.hamburger');
+    const navMenu = navElement.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
 
     if (isLoggedIn) {
         const logoutBtn = navElement.querySelector('.btn-logout');
