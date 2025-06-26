@@ -14,7 +14,7 @@ class CartPage {
       const savedCart = localStorage.getItem('shopping_cart');
       this.cartItems = savedCart ? JSON.parse(savedCart) : [];
     } catch (error) {
-      console.error('Error cargando carrito:', error);
+      console.error('Error loading cart:', error);
       this.cartItems = [];
     }
   }
@@ -148,23 +148,41 @@ class CartPage {
     });
   }
 
-  updateQuantity(productId, change) {
+  async updateQuantity(productId, change) {
     const item = this.cartItems.find(item => item.productId === productId);
-    if (item) {
-      const newQuantity = item.quantity + change;
-      
-      if (newQuantity <= 0) {
-        if (confirm(`¿Quieres eliminar "${item.name}" del carrito?`)) {
-          this.removeItem(productId);
+    if (!item) return;
+
+    const newQuantity = item.quantity + change;
+    
+    if (newQuantity <= 0) {
+      if (confirm(`¿Quieres eliminar "${item.name}" del carrito?`)) {
+        this.removeItem(productId);
+      }
+      return;
+    }
+
+    if (change > 0) {
+      try {
+        const product = await window.ApiService.getProductById(productId);
+        if (product) {
+          const availableStock = product.stock;
+          
+          if (newQuantity > availableStock) {
+            this.showMessage(`Solo hay ${availableStock} unidades disponibles de "${item.name}"`, 'info');
+            return;
+          }
         }
+      } catch (error) {
+        console.error('Error validating stock:', error);
+        this.showMessage('Error al validar stock disponible', 'info');
         return;
       }
-      
-      item.quantity = newQuantity;
-      this.saveCartToStorage();
-      this.renderCart();
-      this.syncWithCartManager();
     }
+    
+    item.quantity = newQuantity;
+    this.saveCartToStorage();
+    this.renderCart();
+    this.syncWithCartManager();
   }
 
   bindSummaryButtons() {
@@ -210,6 +228,7 @@ class CartPage {
     if (window.CartManager) {
       window.CartManager.cart = this.cartItems;
       window.CartManager.updateCartBadge();
+      window.CartManager.updateStockDisplaysIfAvailable();
     }
   }
 
@@ -229,7 +248,7 @@ class CartPage {
     try {
       localStorage.setItem('shopping_cart', JSON.stringify(this.cartItems));
     } catch (error) {
-      console.error('Error guardando carrito:', error);
+      console.error('Error saving cart:', error);
     }
   }
 

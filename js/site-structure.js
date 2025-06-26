@@ -20,10 +20,6 @@ const sitePages = [
     path: 'pages/gorras.html'
   },
   {
-    title: 'Carrito de Compras - AquaSwim',
-    path: 'pages/carrito.html'
-  },
-  {
     title: 'Registro - AquaSwim',
     path: 'pages/registro.html'
   }

@@ -17,7 +17,7 @@ class CartManager {
         this.cart = JSON.parse(savedCart);
       }
     } catch (error) {
-      console.error('Error cargando carrito:', error);
+      console.error('Error loading cart:', error);
       this.cart = [];
     }
   }
@@ -27,7 +27,7 @@ class CartManager {
       localStorage.setItem('shopping_cart', JSON.stringify(this.cart));
       this.updateCartBadge();
     } catch (error) {
-      console.error('Error guardando carrito:', error);
+      console.error('Error saving cart:', error);
     }
   }
 
@@ -53,6 +53,18 @@ class CartManager {
   }
 
   /**
+   * Get available stock for a product (total stock - quantity already in cart)
+   * @param {string} productId - Product ID
+   * @param {number} totalStock - Total stock of the product
+   * @returns {number} Available stock
+   */
+  getAvailableStock(productId, totalStock) {
+    const existingItem = this.cart.find(item => item.productId === productId);
+    const quantityInCart = existingItem ? existingItem.quantity : 0;
+    return totalStock - quantityInCart;
+  }
+
+  /**
    * Add product to cart
    * @param {string} productId - Product ID
    * @param {number} quantity - Quantity to add
@@ -72,23 +84,23 @@ class CartManager {
         return false;
       }
 
+      const availableStock = this.getAvailableStock(productId, product.stock);
+      
+      if (availableStock <= 0) {
+        alert(`Ya tienes todo el stock disponible de "${product.name}" en tu carrito`);
+        return false;
+      }
+
+      if (quantity > availableStock) {
+        alert(`Solo quedan ${availableStock} unidades disponibles de "${product.name}" (ya tienes algunas en el carrito)`);
+        return false;
+      }
+
       const existingItem = this.cart.find(item => item.productId === productId);
       
       if (existingItem) {
-        const newQuantity = existingItem.quantity + quantity;
-        
-        if (newQuantity > product.stock) {
-          alert(`Solo hay ${product.stock} unidades disponibles`);
-          return false;
-        }
-        
-        existingItem.quantity = newQuantity;
+        existingItem.quantity += quantity;
       } else {
-        if (quantity > product.stock) {
-          alert(`Solo hay ${product.stock} unidades disponibles`);
-          return false;
-        }
-        
         this.cart.push({
           productId: productId,
           name: product.name,
@@ -99,9 +111,19 @@ class CartManager {
         });
       }
 
-      // Guardar en localStorage después de cada cambio
       this.saveCartToStorage();
-      alert(`${product.name} agregado al carrito`);
+      
+      this.updateStockDisplaysIfAvailable();
+      
+      const remainingStock = availableStock - quantity;
+      let message = `${product.name} agregado al carrito`;
+      if (remainingStock > 0) {
+        message += ` (quedan ${remainingStock} disponibles)`;
+      } else {
+        message += ` (stock agotado)`;
+      }
+      
+      alert(message);
       return true;
       
     } catch (error) {
@@ -112,29 +134,31 @@ class CartManager {
   }
 
   /**
-   * Remover producto del carrito
-   * @param {string} productId - ID del producto a remover
+   * Remove product from cart
+   * @param {string} productId - Product ID to remove
    */
   removeFromCart(productId) {
     const index = this.cart.findIndex(item => item.productId === productId);
     if (index > -1) {
       this.cart.splice(index, 1);
       this.saveCartToStorage();
+      this.updateStockDisplaysIfAvailable();
       return true;
     }
     return false;
   }
 
   /**
-   * Limpiar carrito completo
+   * Clear entire cart
    */
   clearCart() {
     this.cart = [];
     this.saveCartToStorage();
+    this.updateStockDisplaysIfAvailable();
   }
 
   /**
-   * Obtener todos los productos del carrito
+   * Get all cart products
    */
   getCartItems() {
     return this.cart;
@@ -154,6 +178,15 @@ class CartManager {
    */
   getTotalPrice() {
     return this.cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  }
+
+  /**
+   * Update stock displays if the function is available
+   */
+  updateStockDisplaysIfAvailable() {
+    if (typeof updateStockDisplays === 'function') {
+      setTimeout(() => updateStockDisplays(), 100);
+    }
   }
 
   /**

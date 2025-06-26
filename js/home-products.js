@@ -16,7 +16,7 @@ class HomeProductsManager {
 
     this.featuredContainer = this.getFeaturedContainer();
     if (!this.featuredContainer) {
-      console.warn('No se encontró el contenedor de productos');
+              console.warn('Products container not found');
       return;
     }
 

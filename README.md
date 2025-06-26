@@ -1,147 +1,175 @@
-# 🏊‍♂️ AquaSwim - Ecommerce de Artículos de Natación
+# 🏊‍♂️ AquaSwim - Entrega Final Trabajo Integrador
+## Aplicaciones Web 1 - Colegio Universitario IES Siglo XXI
 
-Sistema de ecommerce completo especializado en artículos de natación con gestión de productos dinámicos, autenticación de usuarios y funcionalidad avanzada de carrito de compras.
+**Autor:** Maximiliano Candia - DNI: 40.626.005
+
+---
+
+## 🌐 Proyecto Publicado
+
+**Enlace de acceso público:** [https://candiamaximiliano.github.io/ecommerce-AW1/](https://candiamaximiliano.github.io/ecommerce-AW1/)
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen)](https://candiamaximiliano.github.io/ecommerce-AW1/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![HTML5](https://img.shields.io/badge/HTML5-Semantic-orange)](https://html.spec.whatwg.org/)
-[![CSS3](https://img.shields.io/badge/CSS3-Modern-blue)](https://www.w3.org/Style/CSS/)
 
-## 🚀 Características Principales
+---
 
-### 📄 **Gestión de Datos**
-- **Datos dinámicos** - Carga de productos desde JSON externo
-- **Sistema asíncrono** - Gestión de datos con fetch API
-- **Productos destacados** - Selección especial en página principal
+## 📹 Video Explicativo
 
-### 🔐 **Autenticación y Sesiones**
-- **Login funcional** - Sistema de autenticación básico
-- **sessionStorage** - Persistencia de datos de usuario logueado
-- **Navbar dinámico** - Muestra usuario logueado y opciones de sesión
-- **Logout** - Cierre de sesión con limpieza de datos
+**Enlace al video:** [*Pendiente de agregar*]
 
-### 🛒 **Carrito de Compras Avanzado**
-- **localStorage** - Persistencia completa del carrito entre sesiones
-- **Página dedicada** - Interfaz completa para gestión del carrito
-- **Controles de cantidad** - Incrementar/decrementar productos
-- **Eliminación de productos** - Individual y vaciado completo
-- **Cálculo automático** - Subtotales y totales en tiempo real
-- **Validación de stock** - Control de inventario disponible
-- **Contador visual** - Badge en navbar con cantidad de productos
+> El video incluirá un recorrido completo por todas las funcionalidades del sitio.
 
-### 📱 **Experiencia de Usuario**
-- **Diseño responsive** - Optimizado para dispositivos móviles y desktop
-- **Interfaz moderna** - Diseño atractivo con animaciones CSS
-- **Botón de WhatsApp** - Contacto directo flotante
-- **Mensajes informativos** - Notificaciones de éxito y confirmaciones
-- **Estados de carga** - Feedback durante operaciones asíncronas
+---
 
-## 🏗️ Estructura del Proyecto
+## 🗺️ Roadmap de Desarrollo
+
+### **Etapa 1: Planificación y Estructura Base**
+- **Objetivos:** Definir la estructura del proyecto y crear el layout básico
+- **Actividades realizadas:**
+  - Análisis de requisitos para un ecommerce de artículos de natación
+  - Creación de la estructura de directorios
+  - Desarrollo del HTML semántico para todas las páginas
+  - Implementación de CSS base con diseño responsive
+
+### **Etapa 2: Diseño y Experiencia de Usuario**
+- **Objetivos:** Crear una interfaz atractiva y funcional
+- **Actividades realizadas:**
+  - Definición de paleta de colores y sistema de diseño
+  - Implementación de componentes UI reutilizables
+  - Desarrollo de grillas de productos responsivas
+  - Creación de formularios estilizados
+  - Integración de botón flotante de WhatsApp
+
+### **Etapa 3: Funcionalidad Básica**
+- **Objetivos:** Implementar la lógica básica del ecommerce
+- **Actividades realizadas:**
+  - Creación de la base de datos JSON de productos
+  - Desarrollo del sistema de carga dinámica de productos
+  - Implementación de interacciones básicas de tarjetas de productos
+  - Creación de la estructura de navegación
+
+### **Etapa 4: Gestión de Datos y Persistencia**
+- **Objetivos:** Implementar manejo de datos con localStorage y sessionStorage
+- **Actividades realizadas:**
+  - Desarrollo del sistema de carrito con localStorage
+  - Implementación de gestión de sesiones con sessionStorage
+  - Creación del sistema de autenticación básico
+  - Desarrollo de la página dedicada del carrito
+
+### **Etapa 5: Mejoras y Optimización Final**
+- **Objetivos:** Pulir la experiencia y añadir mejoras significativas
+- **Actividades realizadas:**
+  - Implementación de mejoras de accesibilidad
+  - Optimización de rendimiento y carga asíncrona
+  - Refinamiento de la experiencia de usuario
+  - Testing y corrección de bugs
+  - Documentación completa del proyecto
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+### **Tecnologías Core**
+- **HTML5:** Estructura semántica y accesible
+- **CSS3:** Estilos modernos con Grid, Flexbox y animaciones
+- **JavaScript ES6+:** Lógica de aplicación con clases y módulos modernos
+
+### **APIs Web Integradas**
+- **Web Storage API (localStorage/sessionStorage):** 
+  - **Justificación:** Necesaria para persistir el carrito de compras entre sesiones y mantener el estado del usuario logueado
+  - **Funcionalidad:** Permite que los usuarios no pierdan sus productos al cerrar el navegador
+- **Fetch API:** 
+  - **Justificación:** Manejo asíncrono moderno para cargar productos desde JSON
+  - **Funcionalidad:** Carga eficiente de datos sin recargar la página
+
+### **Tecnologías de Hosting y Desarrollo**
+- **GitHub Pages:** 
+  - **Justificación:** Hosting gratuito y confiable, ideal para proyectos estáticos
+  - **Funcionalidad:** Despliegue automático desde el repositorio principal
+- **Git:** Control de versiones para el seguimiento del desarrollo
+
+### **Tecnologías No Contempladas Inicialmente**
+- **CSS Custom Properties (Variables CSS):**
+  - **Justificación:** Facilita el mantenimiento del sistema de colores y permite futuras personalizaciones
+  - **Integración:** Sistema centralizado de variables en `:root`
+- **Modules Pattern en JavaScript:**
+  - **Justificación:** Mejor organización del código y reutilización de componentes
+  - **Integración:** Separación de responsabilidades en múltiples archivos especializados
+
+---
+
+## 🎯 Características del Producto Final
+
+### **Funcionalidades Principales**
+- ✅ Catálogo dinámico de productos con 3 categorías
+- ✅ Sistema de autenticación con persistencia de sesión
+- ✅ Carrito de compras completo con localStorage
+- ✅ Navegación responsive para todos los dispositivos
+- ✅ Botón de contacto directo por WhatsApp
+- ✅ Página dedicada para gestión del carrito
+- ✅ Cálculo automático de totales y subtotales
+- ✅ Validación de stock y control de inventario
+
+### **Experiencia de Usuario**
+- 🎨 Diseño moderno con animaciones CSS
+- 📱 Totalmente responsive (mobile-first)
+- ⚡ Carga rápida con fetch asíncrono
+- 🔒 Datos persistentes entre sesiones
+- 💬 Mensajes informativos y confirmaciones
+---
+
+## 🏗️ Estructura Técnica del Proyecto
 
 ```
 ecommerce-AW1/
 ├── data/
 │   └── products.json              # Base de datos de productos
 ├── js/
-│   ├── api-service.js             # Servicio de datos simplificado
-│   ├── cart-manager.js            # Gestión avanzada del carrito con localStorage
-│   ├── session-manager.js         # Gestión de sesiones con sessionStorage
+│   ├── api-service.js             # Servicio de datos
+│   ├── cart-manager.js            # Gestión del carrito con localStorage
+│   ├── session-manager.js         # Gestión de sesiones
 │   ├── home-products.js           # Productos destacados
-│   ├── dynamic-product-loader.js  # Carga dinámica de productos
+│   ├── dynamic-product-loader.js  # Carga dinámica
 │   ├── product-card-interaction.js # Interacciones de productos
-│   ├── navbar-component.js        # Navegación dinámica con estado de usuario
+│   ├── navbar-component.js        # Navegación dinámica
 │   ├── site-structure.js          # Estructura de páginas
-│   ├── whatsapp-button.js         # Botón flotante de contacto
+│   ├── whatsapp-button.js         # Contacto por WhatsApp
 │   ├── footer-component.js        # Componente de pie de página
 │   └── logoutRoot.js              # Funcionalidad de logout
 ├── pages/
 │   ├── js/
-│   │   ├── login.js               # Lógica de login con sessionStorage
-│   │   ├── cart-page.js           # Página completa del carrito
+│   │   ├── login.js               # Lógica de autenticación
+│   │   ├── cart-page.js           # Página del carrito
 │   │   └── logout.js              # Logout para páginas internas
-│   ├── trajes.html                # Página de trajes de baño
-│   ├── antiparras.html            # Página de antiparras
-│   ├── gorras.html                # Página de gorras
-│   ├── carrito.html               # Página del carrito de compras
-│   ├── login.html                 # Página de login
-│   └── registro.html              # Página de registro
-├── css/
-│   ├── index.css                  # Estilos principales
-│   ├── ui-components.css          # Componentes de interfaz y botones
-│   ├── cart.css                   # Estilos completos del carrito
-│   ├── product-grid.css           # Grilla de productos
-│   ├── navigation.css             # Estilos de navegación
-│   ├── footer.css                 # Estilos del pie de página
-│   ├── forms.css                  # Estilos de formularios
-│   └── whatsapp-button.css        # Estilos del botón de WhatsApp
-├── assets/                        # Imágenes y recursos
-└── index.html                     # Página principal
+│   ├── trajes.html, antiparras.html, gorras.html # Categorías
+│   ├── carrito.html               # Página del carrito
+│   ├── login.html, registro.html  # Autenticación
+├── css/                           # Estilos modulares organizados
+└── assets/                        # Recursos multimedia
 ```
 
-## 🛠️ Tecnologías
+---
 
-- **JavaScript ES6+** - Lógica de aplicación con clases y módulos
-- **Web Storage API** - localStorage y sessionStorage para persistencia
-- **Fetch API** - Consumo directo de datos JSON
-- **CSS3** - Estilos modernos con Grid, Flexbox y animaciones
-- **HTML5** - Estructura semántica completa
-- **GitHub Pages** - Hosting y CDN
+## 🎨 Sistema de Diseño
 
-## 🌍 Demo y Instalación
-
-### Demo Online
+### **Paleta de Colores**
+```css
+:root {
+  --color-primario: #1A3A5A;        /* Azul marino profesional */
+  --color-primario-hover: #2C5D87;   /* Hover state */
+  --color-acento: #3498DB;           /* Azul vibrante */
+  --color-fondo-principal: #0D1B2A;  /* Fondo oscuro */
+  --color-fondo-secundario: #172A3A; /* Fondo secundario */
+  --color-texto-principal: #E0E6ED;  /* Texto principal */
+  --color-texto-secundario: #A8B2BC; /* Texto secundario */
+  --color-borde: #2A3A4A;           /* Bordes sutiles */
+}
 ```
-https://candiamaximiliano.github.io/ecommerce-AW1/
-```
+---
 
-### Desarrollo Local
-```bash
-git clone https://github.com/candiamaximiliano/ecommerce-AW1.git
-cd ecommerce-AW1
+## 📊 Datos de Productos
 
-# Abrir el archivo index.html en el navegador
-```
-
-## 🔧 Funcionalidades Implementadas
-
-### **ETAPA 5 - Sistema Completo**
-
-#### 🔐 **Gestión de Usuarios**
-```javascript
-// sessionStorage para usuario logueado
-const userData = {
-  email: "usuario@email.com",
-  name: "usuario",
-  loginTime: "2024-01-15T10:30:00Z"
-};
-sessionStorage.setItem('currentUser', JSON.stringify(userData));
-```
-
-#### 🛒 **Carrito Persistente**
-```javascript
-// localStorage para productos del carrito
-const cartItem = {
-  productId: "traje001",
-  name: "Traje Competición Speed",
-  price: 75000,
-  quantity: 2,
-  imageUrl: "...",
-  formattedPrice: "$75.000,00"
-};
-localStorage.setItem('shopping_cart', JSON.stringify([cartItem]));
-```
-
-#### 📄 **Página del Carrito**
-- Lista completa de productos agregados
-- Controles de cantidad (+/- por producto)
-- Eliminación individual y masiva
-- Cálculo automático de totales
-- Mensajes de confirmación
-- Estado de carrito vacío
-
-### **API de Datos**
-
-#### Estructura de Productos
+### **Estructura de la Base de Datos**
 ```json
 {
   "categories": {
@@ -164,59 +192,28 @@ localStorage.setItem('shopping_cart', JSON.stringify([cartItem]));
   }
 }
 ```
+---
 
-## 🎨 Diseño
+### **Conclusiones Finales**
+Este proyecto representó un salto cualitativo significativo en mis habilidades de desarrollo web. La transición de conceptos básicos a la implementación de un sistema completo con persistencia, autenticación y accesibilidad me ha preparado para proyectos más ambiciosos.
 
-### Paleta de Colores
-```css
-:root {
-  --color-primario: #1A3A5A;
-  --color-primario-hover: #2C5D87;
-  --color-acento: #3498DB;
-  --color-fondo-principal: #0D1B2A;
-  --color-fondo-secundario: #172A3A;
-  --color-texto-principal: #E0E6ED;
-  --color-texto-secundario: #A8B2BC;
-  --color-borde: #2A3A4A;
-}
-```
+El enfoque de desarrollo incremental por etapas demostró ser fundamental para el éxito del proyecto, permitiendo construir funcionalidades complejas de manera sostenible y bien documentada.
 
-### Componentes Principales
-- **Cards de productos** con hover effects
-- **Botones interactivos** con estados de carga
-- **Formularios estilizados** con validación visual
-- **Carrito moderno** con controles intuitivos
-- **Navbar responsive** con indicadores de estado
+---
 
-## 🧪 Funcionalidades de Prueba
+## 📞 Contacto
 
-1. **Autenticación:**
-   - Acceder a login y usar cualquier email/contraseña
-   - Verificar persistencia del usuario en navbar
-   - Probar logout y limpieza de sesión
+**Maximiliano Candia**
+- **GitHub:** [@candiamaximiliano](https://github.com/candiamaximiliano)
+- **WhatsApp:** [+54 9 370 458-6465](https://wa.me/5493704586465)
+- **Email:** [candiamaximiliano.dev@gmail.com](mailto:candiamaximiliano.dev@gmail.com)
 
-2. **Carrito de Compras:**
-   - Agregar productos desde cualquier categoría
-   - Verificar contador en navbar
-   - Acceder a página del carrito
-   - Modificar cantidades con botones +/-
-   - Eliminar productos individuales
-   - Vaciar carrito completo
-   - Cerrar navegador y verificar persistencia
-
-3. **Navegación:**
-   - Responsive en móviles
-   - Botón de WhatsApp funcional
-   - Estados de carga y mensajes
+---
 
 ## 📄 Licencia
 
 Proyecto desarrollado para la materia **Aplicaciones Web 1** del Colegio Universitario IES Siglo XXI.
 
-## 👨‍💻 Autor
+*Trabajo Integrador Final - 2025*
 
-**Maximiliano Candia**
-
-*DNI: 40.626.005*
-- GitHub: [@candiamaximiliano](https://github.com/candiamaximiliano)
-- WhatsApp: [+54 9 370 458-6465](https://wa.me/5493704586465)
+---
