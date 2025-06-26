@@ -22,22 +22,6 @@ body {
   line-height: 1.6;
 }
 
-header {
-  background-color: var(--color-primario);
-  padding: 10px 0;
-  color: var(--color-texto-principal);
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1366px;
-  max-height: 70px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .logo {
   font-size: 24px;
   font-weight: bold;
