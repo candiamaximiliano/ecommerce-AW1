@@ -89,14 +89,30 @@ function createProductCard(product) {
     const cardStockClass = availableStock > 0 ? '' : 'product-out-of-stock';
     const stockText = availableStock > 0 ? `Stock disponible: ${availableStock}` : 'Sin stock disponible';
     
+    const tagsHTML = product.tags && product.tags.length > 0 
+        ? `<div class="product-tags">
+             ${product.tags.slice(0, 4).map(tag => {
+                 const truncatedTag = tag.length > 8 ? tag.substring(0, 8) + '...' : tag;
+                 return `<span class="product-tag" data-full-text="${tag}" title="${tag}">${truncatedTag}</span>`;
+             }).join('')}
+           </div>`
+        : '<div class="product-tags"></div>'; // Mantener espacio consistente
+    
     return `
         <article class="product-card ${cardStockClass}" id="${product.id}" data-product-id="${product.id}">
-            <img src="${product.imageUrl}" alt="${product.imageAlt}" class="product-image" loading="lazy">
+            <div class="product-image-container">
+                <img src="${product.imageUrl}" alt="${product.imageAlt}" class="product-image" loading="lazy">
+                ${product.featured ? '<span class="featured-badge">Destacado</span>' : ''}
+                <span class="product-category-badge">${product.category}</span>
+            </div>
             <div class="product-card-content">
                 <h3 class="product-title">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
-                <div class="price-stock-container">
+                ${tagsHTML}
+                <div class="product-price-section">
                     <p class="product-price">${product.formattedPrice}</p>
+                </div>
+                <div class="product-stock-centered">
                     <span class="stock-info ${stockClass}" data-product-id="${product.id}">${stockText}</span>
                 </div>
                 <div class="quantity-controls">

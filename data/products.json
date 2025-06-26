@@ -15,9 +15,9 @@
           "imageAlt": "Traje de Competición Speed",
           "category": "trajes",
           "inStock": true,
-          "stock": 15,
+          "stock": 5,
           "featured": true,
-          "tags": ["competición", "velocidad", "profesional"]
+          "tags": ["competición", "velocidad", "profesional", "alta calidad", "hidrodinámica"]
         },
         {
           "id": "traje002",
@@ -32,7 +32,7 @@
           "inStock": true,
           "stock": 22,
           "featured": true,
-          "tags": ["entrenamiento", "resistente", "cloro"]
+          "tags": ["entrenamiento", "resistente al cloro", "durabilidad", "secado rápido"]
         },
         {
           "id": "traje003",
@@ -41,13 +41,13 @@
           "price": 32500,
           "currency": "ARS",
           "formattedPrice": "$32.500,00",
-          "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/742/412/products/006962-100-04-f9fea724234346399f17320436767090-1024-1024.webp",
+          "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/742/412/products/005785_550_011-f21160bb4389d3444f16866690158130-640-0.jpg",
           "imageAlt": "Traje Recreativo Aqua",
           "category": "trajes",
           "inStock": true,
-          "stock": 18,
+          "stock": 180,
           "featured": false,
-          "tags": ["recreativo", "cómodo", "principiantes"]
+          "tags": ["recreativo", "principiantes", "colores vibrantes", "súper cómodo"]
         }
       ]
     },
@@ -66,9 +66,9 @@
           "imageAlt": "Antiparra Profesional X",
           "category": "antiparras",
           "inStock": true,
-          "stock": 30,
+          "stock": 17,
           "featured": true,
-          "tags": ["profesional", "anti-empañante", "UV"]
+          "tags": ["profesional", "anti-empañante", "UV", "competición"]
         },
         {
           "id": "antiparra002",
@@ -81,9 +81,9 @@
           "imageAlt": "Antiparra Junior Y",
           "category": "antiparras",
           "inStock": true,
-          "stock": 25,
+          "stock": 250,
           "featured": true,
-          "tags": ["junior", "niños", "colores"]
+          "tags": ["junior", "niños", "colores", "resistente"]
         },
         {
           "id": "antiparra003",
@@ -92,13 +92,13 @@
           "price": 19900,
           "currency": "ARS",
           "formattedPrice": "$19.900,00",
-          "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/742/412/products/001430-545-01-c64e3271590d0f864b17431093325411-1024-1024.webp",
+          "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/742/412/products/002507-120-01-d42f49d29c17672f8a17292594953705-1024-1024.jpg",
           "imageAlt": "Antiparra Entrenamiento Z",
           "category": "antiparras",
           "inStock": true,
-          "stock": 20,
+          "stock": 2,
           "featured": false,
-          "tags": ["entrenamiento", "ajustable", "duradera"]
+          "tags": ["entrenamiento", "ajustable", "duradera", "cómodo"]
         }
       ]
     },
@@ -117,9 +117,9 @@
           "imageAlt": "Gorra de Silicona Pro",
           "category": "gorras",
           "inStock": true,
-          "stock": 40,
+          "stock": 1,
           "featured": true,
-          "tags": ["silicona", "hidrodinámico", "competición"]
+          "tags": ["silicona", "hidrodinámico", "competición", "pro"]
         },
         {
           "id": "gorra002",
@@ -132,9 +132,9 @@
           "imageAlt": "Gorra de Lycra Confort",
           "category": "gorras",
           "inStock": true,
-          "stock": 35,
+          "stock": 1500,
           "featured": true,
-          "tags": ["lycra", "confort", "suave"]
+          "tags": ["lycra", "confort", "suave", "elástico"]
         },
         {
           "id": "gorra003",
@@ -143,13 +143,13 @@
           "price": 16500,
           "currency": "ARS",
           "formattedPrice": "$16.500,00",
-          "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/742/412/products/1e774-239-poolish-moulded-001-fl-s-9f2da664-8d89b453628bd91e2f17416409415223-1024-1024.webp",
+          "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/742/412/products/1e368-270-01-70e2e360c69a5775e517437135060494-640-0.jpg",
           "imageAlt": "Gorra Térmica Winter",
           "category": "gorras",
           "inStock": true,
           "stock": 12,
           "featured": false,
-          "tags": ["térmica", "aguas frías", "invierno"]
+          "tags": ["térmica", "aguas frías", "invierno", "especializada"]
         }
       ]
     }

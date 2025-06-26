@@ -194,25 +194,44 @@ class HomeProductsManager {
    * @returns {string}
    */
   createHomeProductCard(product) {
-    const stockClass = product.inStock ? '' : 'product-out-of-stock';
+    const availableStock = this.getAvailableStockForProduct(product.id, product.stock);
+    const stockClass = availableStock > 0 ? '' : 'product-out-of-stock';
+    const stockInfoClass = availableStock > 0 ? 'in-stock' : 'out-of-stock';
+    const stockText = availableStock > 0 ? `Stock disponible: ${availableStock}` : 'Sin stock disponible';
+    
+    const tagsHTML = product.tags && product.tags.length > 0 
+        ? `<div class="product-tags">
+             ${product.tags.slice(0, 3).map(tag => {
+                 const truncatedTag = tag.length > 8 ? tag.substring(0, 8) + '...' : tag;
+                 return `<span class="product-tag" data-full-text="${tag}" title="${tag}">${truncatedTag}</span>`;
+             }).join('')}
+           </div>`
+        : '<div class="product-tags"></div>'; // Mantener espacio consistente
     
     return `
       <article class="product-card home-variant ${stockClass}" data-product-id="${product.id}">
         <div class="product-image-container">
           <img src="${product.imageUrl}" alt="${product.imageAlt}" class="product-image" loading="lazy">
           ${product.featured ? '<span class="featured-badge">Destacado</span>' : ''}
+          <span class="product-category-badge">${product.category}</span>
         </div>
         <div class="product-card-content home-variant">
           <h4 class="product-title home-variant">${product.name}</h4>
-          <p class="product-price home-variant">${product.formattedPrice}</p>
+          ${tagsHTML}
+          <div class="product-price-section">
+            <p class="product-price home-variant">${product.formattedPrice}</p>
+          </div>
+          <div class="product-stock-centered">
+            <span class="stock-info ${stockInfoClass}" data-product-id="${product.id}">${stockText}</span>
+          </div>
           <div class="product-actions">
             <div class="quantity-controls">
-              <button type="button" class="quantity-btn quantity-decrease" ${!product.inStock ? 'disabled' : ''}>-</button>
-              <input type="number" class="quantity-input" value="1" min="1" max="${product.stock}" readonly>
-              <button type="button" class="quantity-btn quantity-increase" ${!product.inStock ? 'disabled' : ''}>+</button>
+              <button type="button" class="quantity-btn quantity-decrease" ${availableStock <= 0 ? 'disabled' : ''}>-</button>
+              <input type="number" class="quantity-input" value="1" min="1" max="${Math.max(1, availableStock)}" readonly>
+              <button type="button" class="quantity-btn quantity-increase" ${availableStock <= 0 ? 'disabled' : ''}>+</button>
             </div>
-            <button class="btn-add-to-cart" data-product-id="${product.id}" ${!product.inStock ? 'disabled' : ''}>
-              ${product.inStock ? 'Añadir al carrito' : 'Sin Stock'}
+            <button class="btn-add-to-cart" data-product-id="${product.id}" ${availableStock <= 0 ? 'disabled' : ''}>
+              ${availableStock > 0 ? 'Añadir al carrito' : 'Sin Stock'}
             </button>
           </div>
         </div>
@@ -250,6 +269,27 @@ class HomeProductsManager {
     if (newValue >= min && newValue <= max) {
       input.value = newValue;
     }
+  }
+
+  /**
+   * Get available stock for a product (total - quantity in cart)
+   * @param {string} productId 
+   * @param {number} totalStock 
+   * @returns {number}
+   */
+  getAvailableStockForProduct(productId, totalStock) {
+    try {
+      const savedCart = localStorage.getItem('shopping_cart');
+      if (savedCart) {
+        const cart = JSON.parse(savedCart);
+        const existingItem = cart.find(item => item.productId === productId);
+        const quantityInCart = existingItem ? existingItem.quantity : 0;
+        return Math.max(0, totalStock - quantityInCart);
+      }
+    } catch (error) {
+      console.error('Error calculating available stock:', error);
+    }
+    return totalStock;
   }
 }
 
