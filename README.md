@@ -141,9 +141,12 @@ ecommerce-AW1/
 │   │   ├── login.js               # Lógica de autenticación
 │   │   ├── cart-page.js           # Página del carrito
 │   │   └── logout.js              # Logout para páginas internas
-│   ├── trajes.html, antiparras.html, gorras.html # Categorías
-│   ├── carrito.html               # Página del carrito
-│   ├── login.html, registro.html  # Autenticación
+│   ├── trajes.html
+│   ├── antiparras.html
+│   ├── gorras.html
+│   ├── carrito.html
+│   ├── login.html
+│   ├── registro.html
 ├── css/                           # Estilos modulares organizados
 └── assets/                        # Recursos multimedia
 ```

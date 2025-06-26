@@ -57,13 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         navHTML += `<li><a href="${linkPath}">${linkText}</a></li>`;
     });
 
-    // Add cart link with counter
     const cartPath = isRoot ? 'pages/carrito.html' : 'carrito.html';
     const cartQuantity = getCartQuantity();
     const cartBadge = cartQuantity > 0 ? `<span class="cart-badge">${cartQuantity}</span>` : '';
     navHTML += `<li><a href="${cartPath}" class="cart-link">Carrito ${cartBadge}</a></li>`;
 
-    // Show different options based on session status
     if (isLoggedIn) {
         navHTML += `<li><span class="user-welcome">¡Hola ${userData.name}!</span></li>`;
         navHTML += `<li><button class="btn-logout" title="Cerrar Sesión">Cerrar Sesión</button></li>`;
@@ -76,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navElement.innerHTML = navHTML;
 
-    // Add logout event listener
     if (isLoggedIn) {
         const logoutBtn = navElement.querySelector('.btn-logout');
         if (logoutBtn) {
