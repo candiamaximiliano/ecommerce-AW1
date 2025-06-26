@@ -8,6 +8,7 @@
   <link rel="icon" href="../assets/favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/ui-components.css">
+  <link rel="stylesheet" href="../css/navigation.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/forms.css">
 </head>
@@ -15,9 +16,14 @@
   <header>
     <nav>
       <a href="../index.html">
-        <img class="logo" src="../assets/AquaSwim.png" width="200px" alt="logo">
+        <img class="logo" src="../assets/AquaSwim.png" alt="logo">
       </a>
-      <ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu">
         <li><a href="trajes.html">Trajes de Baño</a></li>
         <li><a href="antiparras.html">Antiparras</a></li>
         <li><a href="gorras.html">Gorras</a></li>
@@ -60,5 +66,23 @@
   </main>
   <script src="../js/session-manager.js"></script>
   <script src="../js/footer-component.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      navMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html> 
