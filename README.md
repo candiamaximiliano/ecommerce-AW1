@@ -15,7 +15,7 @@
 
 ## 📹 Video Explicativo
 
-**Enlace al video:** [*Pendiente de agregar*]
+**Enlace al video:** [Google Drive](https://drive.google.com/file/d/1wUZlLKJ6fvPaQml5qy0wrfn9HyYJz2uV/view?usp=drive_link)
 
 > El video incluirá un recorrido completo por todas las funcionalidades del sitio.
 
